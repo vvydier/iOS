@@ -47,6 +47,15 @@
         }
       },
       {
+        "package": "PrivateSync",
+        "repositoryURL": "/Users/brindy/Projects/DuckDuckGo/PrivateSync",
+        "state": {
+          "branch": "main",
+          "revision": "787f0ee2a432e1c15ad716fbc2b5ca6b4def8b6c",
+          "version": null
+        }
+      },
+      {
         "package": "Punycode",
         "repositoryURL": "https://github.com/gumob/PunycodeSwift.git",
         "state": {

@@ -24,6 +24,7 @@ import os.log
 import Kingfisher
 import WidgetKit
 import BackgroundTasks
+import PrivateSync
 
 // swiftlint:disable file_length
 // swiftlint:disable type_body_length
@@ -104,6 +105,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         window?.windowScene?.screenshotService?.delegate = self
+
+        PrivateSync.shared.delegate = self
+        PrivateSync.shared.start()
 
         appIsLaunching = true
         return true
@@ -408,4 +412,21 @@ extension AppDelegate: UIScreenshotServiceDelegate {
             completionHandler(data, 0, visibleBounds)
         }
     }
+}
+
+extension AppDelegate: PrivateSyncDelegate {
+
+    func privateSyncRequestedBookmarks(_: PrivateSync) -> [Bookmark] {
+        return bookmarkStore.bookmarks.map {
+            Bookmark(url: $0.url, title: $0.title)
+        }
+    }
+
+    func privateSync(_: PrivateSync, receivedBookmark bookmark: Bookmark) {
+        let link = Link(title: bookmark.title, url: bookmark.url)
+        if !bookmarkStore.bookmarks.contains(where: { $0.url == link.url }) {
+            bookmarkStore.addBookmark(link)
+        }
+    }
+
 }

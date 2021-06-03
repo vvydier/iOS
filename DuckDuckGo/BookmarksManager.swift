@@ -19,6 +19,7 @@
 
 import Core
 import WidgetKit
+import PrivateSync
 
 class BookmarksManager {
 
@@ -53,6 +54,9 @@ class BookmarksManager {
     func save(bookmark: Link) {
         dataStore.addBookmark(bookmark)
         Favicons.shared.loadFavicon(forDomain: bookmark.url.host, intoCache: .bookmarks, fromCache: .tabs)
+
+        let syncableBookmark = Bookmark(url: bookmark.url, title: bookmark.title)
+        PrivateSync.shared.publishEvent(.add(bookmark: syncableBookmark))
     }
 
     func save(favorite: Link) {
@@ -154,6 +158,8 @@ class BookmarksManager {
         bookmarks.insert(link, at: index)
         dataStore.bookmarks = bookmarks
         updateFaviconIfNeeded(old, link)
+
+        // TODO PrivateSync.shared.publishEvent(.updated(old, new))
     }
 
     private func updateFaviconIfNeeded(_ old: Link, _ new: Link) {
