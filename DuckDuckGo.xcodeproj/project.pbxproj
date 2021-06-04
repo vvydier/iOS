@@ -156,7 +156,7 @@
 		8540BD5223D8C2220057FDD2 /* PreserveLoginsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8540BD5123D8C2220057FDD2 /* PreserveLoginsTests.swift */; };
 		8540BD5423D8D5080057FDD2 /* PreserveLoginsAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8540BD5323D8D5080057FDD2 /* PreserveLoginsAlert.swift */; };
 		8540BD5623D9E9C20057FDD2 /* PreserveLoginsSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8540BD5523D9E9C20057FDD2 /* PreserveLoginsSettingsViewController.swift */; };
-		85413D2C2668E079001723E0 /* PrivateSync in Frameworks */ = {isa = PBXBuildFile; productRef = 85413D2B2668E079001723E0 /* PrivateSync */; };
+		85413D30266A2B9C001723E0 /* PrivateSyncKit in Frameworks */ = {isa = PBXBuildFile; productRef = 85413D2F266A2B9C001723E0 /* PrivateSyncKit */; };
 		85436C3F1FA74BC300F4EEE1 /* PrivacyProtection.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85436C3E1FA74BC300F4EEE1 /* PrivacyProtection.xcassets */; };
 		85449EF523FDA02800512AAF /* KeyboardSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85449EF423FDA02800512AAF /* KeyboardSettingsViewController.swift */; };
 		85449EFB23FDA0BC00512AAF /* UserDefaultsPropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85449EFA23FDA0BC00512AAF /* UserDefaultsPropertyWrapper.swift */; };
@@ -847,7 +847,7 @@
 		8540BD5123D8C2220057FDD2 /* PreserveLoginsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreserveLoginsTests.swift; sourceTree = "<group>"; };
 		8540BD5323D8D5080057FDD2 /* PreserveLoginsAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreserveLoginsAlert.swift; sourceTree = "<group>"; };
 		8540BD5523D9E9C20057FDD2 /* PreserveLoginsSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreserveLoginsSettingsViewController.swift; sourceTree = "<group>"; };
-		85413D2D2668E126001723E0 /* PrivateSync */ = {isa = PBXFileReference; lastKnownFileType = folder; name = PrivateSync; path = ../PrivateSync; sourceTree = "<group>"; };
+		85413D2E266A2A94001723E0 /* PrivateSyncKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = PrivateSyncKit; path = ../PrivateSyncKit; sourceTree = "<group>"; };
 		85436C3E1FA74BC300F4EEE1 /* PrivacyProtection.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PrivacyProtection.xcassets; sourceTree = "<group>"; };
 		85449EF423FDA02800512AAF /* KeyboardSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardSettingsViewController.swift; sourceTree = "<group>"; };
 		85449EFA23FDA0BC00512AAF /* UserDefaultsPropertyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsPropertyWrapper.swift; sourceTree = "<group>"; };
@@ -2028,8 +2028,8 @@
 			files = (
 				853273B624FFE0BB00E3C778 /* WidgetKit.framework in Frameworks */,
 				F143C2EB1E4A4CD400CFDE3A /* Core.framework in Frameworks */,
+				85413D30266A2B9C001723E0 /* PrivateSyncKit in Frameworks */,
 				F4D1BFA42587EA0600469046 /* Lottie in Frameworks */,
-				85413D2C2668E079001723E0 /* PrivateSync in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2346,6 +2346,7 @@
 		84E341891E2F7EFB00BDBA6F = {
 			isa = PBXGroup;
 			children = (
+				85413D2E266A2A94001723E0 /* PrivateSyncKit */,
 				6FB030C7234331B400A10DB9 /* Configuration.xcconfig */,
 				84E341941E2F7EFB00BDBA6F /* DuckDuckGo */,
 				F143C2E51E4A4CD400CFDE3A /* Core */,
@@ -2363,7 +2364,6 @@
 				85D33FCC25C97B6E002B91A6 /* IntegrationTests */,
 				F1AA545F1E48D90700223211 /* Frameworks */,
 				84E341931E2F7EFB00BDBA6F /* Products */,
-				85413D2D2668E126001723E0 /* PrivateSync */,
 				83ED3B8D1FA8E63700B47556 /* README.md */,
 				83ED3B8C1FA8E61D00B47556 /* ManualTestsScript.md */,
 				85A313962028E78A00327D00 /* release_notes.txt */,
@@ -3889,7 +3889,7 @@
 			name = DuckDuckGo;
 			packageProductDependencies = (
 				F4D1BFA32587EA0600469046 /* Lottie */,
-				85413D2B2668E079001723E0 /* PrivateSync */,
+				85413D2F266A2B9C001723E0 /* PrivateSyncKit */,
 			);
 			productName = DuckDuckGo;
 			productReference = 84E341921E2F7EFB00BDBA6F /* DuckDuckGo.app */;
@@ -4162,7 +4162,6 @@
 				F4D1BFA22587EA0600469046 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				4B82E97E25B634B800656FE7 /* XCRemoteSwiftPackageReference "TrackerRadarKit" */,
 				4BE86C5B2633DBD7001C0E77 /* XCRemoteSwiftPackageReference "BrowserServicesKit" */,
-				85413D2A2668E079001723E0 /* XCRemoteSwiftPackageReference "PrivateSync" */,
 			);
 			productRefGroup = 84E341931E2F7EFB00BDBA6F /* Products */;
 			projectDirPath = "";
@@ -6825,14 +6824,6 @@
 				minimumVersion = 4.0.0;
 			};
 		};
-		85413D2A2668E079001723E0 /* XCRemoteSwiftPackageReference "PrivateSync" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "file:///Users/brindy/Projects/DuckDuckGo/PrivateSync";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 		F486D2EF25069482002D07D7 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -6886,10 +6877,9 @@
 			package = 4BE86C5B2633DBD7001C0E77 /* XCRemoteSwiftPackageReference "BrowserServicesKit" */;
 			productName = BrowserServicesKit;
 		};
-		85413D2B2668E079001723E0 /* PrivateSync */ = {
+		85413D2F266A2B9C001723E0 /* PrivateSyncKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 85413D2A2668E079001723E0 /* XCRemoteSwiftPackageReference "PrivateSync" */;
-			productName = PrivateSync;
+			productName = PrivateSyncKit;
 		};
 		F486D305250697AF002D07D7 /* Punnycode */ = {
 			isa = XCSwiftPackageProductDependency;

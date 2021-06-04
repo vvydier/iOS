@@ -24,7 +24,7 @@ import os.log
 import Kingfisher
 import WidgetKit
 import BackgroundTasks
-import PrivateSync
+import PrivateSyncKit
 
 // swiftlint:disable file_length
 // swiftlint:disable type_body_length

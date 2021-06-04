@@ -19,7 +19,7 @@
 
 import Core
 import WidgetKit
-import PrivateSync
+import PrivateSyncKit
 
 class BookmarksManager {
 
