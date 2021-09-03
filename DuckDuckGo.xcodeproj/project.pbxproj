@@ -423,6 +423,11 @@
 		98FA4BB52440AA1A00894CD8 /* TrackersAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FA4BB42440AA1A00894CD8 /* TrackersAnimator.swift */; };
 		98FA4BB72440D0A800894CD8 /* PrivacyProtectionIconSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FA4BB62440D0A800894CD8 /* PrivacyProtectionIconSource.swift */; };
 		98FD3E2823A3010C005ABD42 /* ios12-home-row.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 98FD3E2723A3010C005ABD42 /* ios12-home-row.mp4 */; };
+		9A3372D226A096E700324047 /* libURLSessionInstrumentation in Frameworks */ = {isa = PBXBuildFile; productRef = 9A3372D126A096E700324047 /* libURLSessionInstrumentation */; };
+		9A3372D426A096E700324047 /* libSignPostIntegration in Frameworks */ = {isa = PBXBuildFile; productRef = 9A3372D326A096E700324047 /* libSignPostIntegration */; };
+		9A3372D626A096E700324047 /* libOpenTelemetryApi in Frameworks */ = {isa = PBXBuildFile; productRef = 9A3372D526A096E700324047 /* libOpenTelemetryApi */; };
+		9A3372D826A096E700324047 /* libOpenTelemetrySdk in Frameworks */ = {isa = PBXBuildFile; productRef = 9A3372D726A096E700324047 /* libOpenTelemetrySdk */; };
+		9A3372DA26A096E700324047 /* libStdoutExporter in Frameworks */ = {isa = PBXBuildFile; productRef = 9A3372D926A096E700324047 /* libStdoutExporter */; };
 		AA3D854523D9942200788410 /* AppIconSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3D854423D9942200788410 /* AppIconSettingsViewController.swift */; };
 		AA3D854723D9E88E00788410 /* AppIconSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3D854623D9E88E00788410 /* AppIconSettingsCell.swift */; };
 		AA3D854923DA1DFB00788410 /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3D854823DA1DFB00788410 /* AppIcon.swift */; };
@@ -2090,8 +2095,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A3372D426A096E700324047 /* libSignPostIntegration in Frameworks */,
 				853273B624FFE0BB00E3C778 /* WidgetKit.framework in Frameworks */,
 				F143C2EB1E4A4CD400CFDE3A /* Core.framework in Frameworks */,
+				9A3372D626A096E700324047 /* libOpenTelemetryApi in Frameworks */,
+				9A3372DA26A096E700324047 /* libStdoutExporter in Frameworks */,
+				9A3372D826A096E700324047 /* libOpenTelemetrySdk in Frameworks */,
+				9A3372D226A096E700324047 /* libURLSessionInstrumentation in Frameworks */,
 				F4D1BFA42587EA0600469046 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4001,6 +4011,11 @@
 			name = DuckDuckGo;
 			packageProductDependencies = (
 				F4D1BFA32587EA0600469046 /* Lottie */,
+				9A3372D126A096E700324047 /* libURLSessionInstrumentation */,
+				9A3372D326A096E700324047 /* libSignPostIntegration */,
+				9A3372D526A096E700324047 /* libOpenTelemetryApi */,
+				9A3372D726A096E700324047 /* libOpenTelemetrySdk */,
+				9A3372D926A096E700324047 /* libStdoutExporter */,
 			);
 			productName = DuckDuckGo;
 			productReference = 84E341921E2F7EFB00BDBA6F /* DuckDuckGo.app */;
@@ -4273,6 +4288,7 @@
 				F4D1BFA22587EA0600469046 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				4B82E97E25B634B800656FE7 /* XCRemoteSwiftPackageReference "TrackerRadarKit" */,
 				4BE86C5B2633DBD7001C0E77 /* XCRemoteSwiftPackageReference "BrowserServicesKit" */,
+				9A3372D026A096E700324047 /* XCRemoteSwiftPackageReference "opentelemetry-swift" */,
 			);
 			productRefGroup = 84E341931E2F7EFB00BDBA6F /* Products */;
 			projectDirPath = "";
@@ -6538,10 +6554,12 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DuckDuckGo/DuckDuckGo.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = M587CG9UT8;
 				INFOPLIST_FILE = DuckDuckGo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -6549,6 +6567,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_ID)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -6559,9 +6578,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DuckDuckGo/DuckDuckGo.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0;
+				DEVELOPMENT_TEAM = M587CG9UT8;
 				INFOPLIST_FILE = DuckDuckGo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -6569,6 +6590,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_ID)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -7075,6 +7097,14 @@
 				minimumVersion = 4.0.2;
 			};
 		};
+		9A3372D026A096E700324047 /* XCRemoteSwiftPackageReference "opentelemetry-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/open-telemetry/opentelemetry-swift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		F486D2EF25069482002D07D7 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -7127,6 +7157,31 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4BE86C5B2633DBD7001C0E77 /* XCRemoteSwiftPackageReference "BrowserServicesKit" */;
 			productName = BrowserServicesKit;
+		};
+		9A3372D126A096E700324047 /* libURLSessionInstrumentation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9A3372D026A096E700324047 /* XCRemoteSwiftPackageReference "opentelemetry-swift" */;
+			productName = libURLSessionInstrumentation;
+		};
+		9A3372D326A096E700324047 /* libSignPostIntegration */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9A3372D026A096E700324047 /* XCRemoteSwiftPackageReference "opentelemetry-swift" */;
+			productName = libSignPostIntegration;
+		};
+		9A3372D526A096E700324047 /* libOpenTelemetryApi */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9A3372D026A096E700324047 /* XCRemoteSwiftPackageReference "opentelemetry-swift" */;
+			productName = libOpenTelemetryApi;
+		};
+		9A3372D726A096E700324047 /* libOpenTelemetrySdk */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9A3372D026A096E700324047 /* XCRemoteSwiftPackageReference "opentelemetry-swift" */;
+			productName = libOpenTelemetrySdk;
+		};
+		9A3372D926A096E700324047 /* libStdoutExporter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9A3372D026A096E700324047 /* XCRemoteSwiftPackageReference "opentelemetry-swift" */;
+			productName = libStdoutExporter;
 		};
 		F486D305250697AF002D07D7 /* Punnycode */ = {
 			isa = XCSwiftPackageProductDependency;

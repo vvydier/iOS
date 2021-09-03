@@ -24,6 +24,11 @@ import os.log
 import Kingfisher
 import WidgetKit
 import BackgroundTasks
+import OpenTelemetryApi
+import OpenTelemetrySdk
+import URLSessionInstrumentation
+import StdoutExporter
+import SignPostIntegration
 
 // swiftlint:disable file_length
 // swiftlint:disable type_body_length
@@ -106,6 +111,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.windowScene?.screenshotService?.delegate = self
 
         appIsLaunching = true
+        
+        //   OTel additions
+            let spanProcessor = SimpleSpanProcessor(spanExporter: StdoutExporter(isDebug: true))
+            OpenTelemetrySDK.instance.tracerProvider.addSpanProcessor(spanProcessor)
+            _ = URLSessionInstrumentation(configuration: URLSessionInstrumentationConfiguration())
+        
         return true
     }
 
